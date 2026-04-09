@@ -12,11 +12,19 @@ public class EmailService {
     private JavaMailSender mailSender;
 
     public void sendOtp(String toEmail, String otp) {
-        SimpleMailMessage message = new SimpleMailMessage();
-        message.setTo(toEmail);
-        message.setSubject("TourConnect Password Reset OTP");
-        message.setText("Your OTP is: " + otp);
 
-        mailSender.send(message);
+        try {
+            SimpleMailMessage message = new SimpleMailMessage();
+            message.setTo(toEmail);
+            message.setSubject("Your OTP for Password Reset");
+            message.setText("Your OTP is: " + otp);
+
+            mailSender.send(message);
+
+            System.out.println("OTP sent to email: " + toEmail);
+
+        } catch (Exception e) {
+            System.out.println("EMAIL ERROR: " + e.getMessage());
+        }
     }
 }

@@ -13,7 +13,7 @@ public class Otp {
     private String otp;
     private long expiryTime;
 
-    // ✅ GETTERS & SETTERS
+    private boolean verified = false; // 🔥 IMPORTANT
 
     public Long getId() {
         return id;
@@ -41,5 +41,13 @@ public class Otp {
 
     public void setExpiryTime(long expiryTime) {
         this.expiryTime = expiryTime;
+    }
+
+    public boolean isVerified() {
+        return verified;
+    }
+
+    public void setVerified(boolean verified) {
+        this.verified = verified;
     }
 }

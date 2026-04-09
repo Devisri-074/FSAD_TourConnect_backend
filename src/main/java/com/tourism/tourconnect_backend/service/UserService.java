@@ -27,7 +27,7 @@ public class UserService {
         return Optional.empty();
     }
 
-    // ✅ ADD THIS METHOD (FOR RESET PASSWORD)
+    // 🔥 RESET PASSWORD
     public String resetPassword(String email, String newPassword) {
         Optional<User> userOpt = repo.findByEmail(email);
 
