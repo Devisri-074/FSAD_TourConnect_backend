@@ -37,9 +37,9 @@ public class OtpService {
 
         emailService.sendOtp(email, otp);
 
-        System.out.println("OTP: " + otp);
+        System.out.println("OTP sent to email: " + email);
 
-        return otp;   // 🔥 IMPORTANT (return actual OTP)
+        return "OTP sent successfully";   // 🔥 IMPORTANT (return actual OTP)
     }
 
     // ✅ VERIFY OTP
