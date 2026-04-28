@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/homestays")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "https://fsad-project-tour-connect-frontend.vercel.app")
 public class HomestayController {
 
     @Autowired

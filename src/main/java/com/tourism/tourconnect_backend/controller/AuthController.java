@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins = "http://localhost:5173", allowCredentials = "true")
+@CrossOrigin(origins = "https://fsad-project-tour-connect-frontend.vercel.app", allowCredentials = "true")
 public class AuthController {
 
     @Autowired
@@ -99,7 +99,7 @@ public class AuthController {
         }
 
         // ✅ Redirect to frontend
-        response.sendRedirect("http://localhost:5173/dashboard");
+        response.sendRedirect("https://fsad-project-tour-connect-frontend.vercel.app/dashboard");
     }
 
     // ✅ NEW: GET CURRENT LOGGED-IN USER (VERY IMPORTANT)

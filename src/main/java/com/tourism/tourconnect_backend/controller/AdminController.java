@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:5173", allowCredentials = "true")
+@CrossOrigin(origins = "https://fsad-project-tour-connect-frontend.vercel.app", allowCredentials = "true")
 public class AdminController {
 
     @Autowired
