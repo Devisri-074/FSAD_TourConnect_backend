@@ -19,8 +19,11 @@ public class EmailService {
             message.setSubject("Your OTP for Password Reset");
             message.setText("Your OTP is: " + otp);
 
+            System.out.println("SENDING EMAIL TO: " + toEmail);
+
             mailSender.send(message);
 
+            System.out.println("EMAIL SENT SUCCESSFULLY");
             System.out.println("OTP sent to email: " + toEmail);
 
         } catch (Exception e) {
