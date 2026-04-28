@@ -21,6 +21,12 @@ public class BookingController {
         return service.create(b);
     }
 
+    // ✅ GET BOOKINGS BY USER EMAIL
+    @GetMapping("/user/{email}")
+    public List<Booking> getByUserEmail(@PathVariable String email) {
+        return service.getByUserEmail(email);
+    }
+
     // ✅ GET ALL BOOKINGS
     @GetMapping
     public List<Booking> getAll() {
@@ -33,10 +39,10 @@ public class BookingController {
         return service.getByHost(hostId);
     }
 
-    // ✅ UPDATE STATUS
+    // ✅ UPDATE STATUS - accepts JSON body
     @PutMapping("/{id}/status")
-    public Booking updateStatus(@PathVariable Long id, @RequestParam String status) {
-        return service.updateStatus(id, status);
+    public Booking updateStatus(@PathVariable Long id, @RequestBody java.util.Map<String, String> body) {
+        return service.updateStatus(id, body.get("status"));
     }
 
     // ✅ DELETE

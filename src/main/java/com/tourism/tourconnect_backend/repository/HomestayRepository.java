@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface HomestayRepository extends JpaRepository<Homestay, Long> {
     List<Homestay> findByStatus(String status);
+    List<Homestay> findByHostId(Long hostId);
+    List<Homestay> findByCitySlug(String citySlug);
 }

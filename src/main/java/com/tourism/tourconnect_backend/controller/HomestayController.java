@@ -33,6 +33,12 @@ public class HomestayController {
         return service.getAll();
     }
 
+    // Admin approve/reject via status
+    @PutMapping("/{id}/status")
+    public Homestay updateStatus(@PathVariable Long id, @RequestBody java.util.Map<String, String> body) {
+        return service.updateStatus(id, body.get("status"));
+    }
+
     // Admin approve
     @PutMapping("/approve/{id}")
     public Homestay approve(@PathVariable Long id) {

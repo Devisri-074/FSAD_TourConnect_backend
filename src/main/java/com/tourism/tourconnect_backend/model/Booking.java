@@ -13,20 +13,15 @@ public class Booking {
     private String city;
     private String homestayName;
     private String guideName;
-
     private String userEmail;
-
     private String startDate;
     private String endDate;
-
     private Double homestayPrice;
     private Double guidePrice;
-
+    private Double baseTripCost;
     private String status;
-
     private Long hostId;
-
-    // ✅ GETTERS & SETTERS
+    private String createdAt;
 
     public Long getId() { return id; }
 
@@ -54,9 +49,15 @@ public class Booking {
     public Double getGuidePrice() { return guidePrice; }
     public void setGuidePrice(Double guidePrice) { this.guidePrice = guidePrice; }
 
+    public Double getBaseTripCost() { return baseTripCost; }
+    public void setBaseTripCost(Double baseTripCost) { this.baseTripCost = baseTripCost; }
+
     public String getStatus() { return status; }
     public void setStatus(String status) { this.status = status; }
 
     public Long getHostId() { return hostId; }
     public void setHostId(Long hostId) { this.hostId = hostId; }
+
+    public String getCreatedAt() { return createdAt; }
+    public void setCreatedAt(String createdAt) { this.createdAt = createdAt; }
 }

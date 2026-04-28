@@ -11,23 +11,32 @@ public class Homestay {
     private Long id;
 
     private String title;
+    private String name;        // alias for title used by frontend
     private String city;
+    private String citySlug;
     private double price;
     private String description;
     private String image;
     private Long hostId;
+    private String hostName;
+    private String hostEmail;
+    private String status;
+    private String approvalStatus;
+    private boolean isDefault;
 
-    private String status; // PENDING / APPROVED
-    private boolean isDefault; // true = default data
-
-    // Getters & Setters
     public Long getId() { return id; }
 
     public String getTitle() { return title; }
-    public void setTitle(String title) { this.title = title; }
+    public void setTitle(String title) { this.title = title; this.name = title; }
+
+    public String getName() { return name != null ? name : title; }
+    public void setName(String name) { this.name = name; this.title = name; }
 
     public String getCity() { return city; }
     public void setCity(String city) { this.city = city; }
+
+    public String getCitySlug() { return citySlug; }
+    public void setCitySlug(String citySlug) { this.citySlug = citySlug; }
 
     public double getPrice() { return price; }
     public void setPrice(double price) { this.price = price; }
@@ -41,8 +50,17 @@ public class Homestay {
     public Long getHostId() { return hostId; }
     public void setHostId(Long hostId) { this.hostId = hostId; }
 
+    public String getHostName() { return hostName; }
+    public void setHostName(String hostName) { this.hostName = hostName; }
+
+    public String getHostEmail() { return hostEmail; }
+    public void setHostEmail(String hostEmail) { this.hostEmail = hostEmail; }
+
     public String getStatus() { return status; }
-    public void setStatus(String status) { this.status = status; }
+    public void setStatus(String status) { this.status = status; this.approvalStatus = status; }
+
+    public String getApprovalStatus() { return approvalStatus; }
+    public void setApprovalStatus(String approvalStatus) { this.approvalStatus = approvalStatus; }
 
     public boolean isDefault() { return isDefault; }
     public void setDefault(boolean aDefault) { isDefault = aDefault; }

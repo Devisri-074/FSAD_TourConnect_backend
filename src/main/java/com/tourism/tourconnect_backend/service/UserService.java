@@ -13,10 +13,12 @@ public class UserService {
     @Autowired
     private UserRepository repo;
 
+    // ✅ SIGNUP
     public User signup(User user) {
         return repo.save(user);
     }
 
+    // ✅ LOGIN
     public Optional<User> login(String email, String password) {
         Optional<User> user = repo.findByEmail(email);
 
@@ -27,7 +29,17 @@ public class UserService {
         return Optional.empty();
     }
 
-    // 🔥 RESET PASSWORD
+    // ✅ FIND BY EMAIL (🔥 REQUIRED FOR GOOGLE LOGIN)
+    public User findByEmail(String email) {
+        return repo.findByEmail(email).orElse(null);
+    }
+
+    // ✅ SAVE USER (🔥 REQUIRED FOR GOOGLE LOGIN)
+    public User save(User user) {
+        return repo.save(user);
+    }
+
+    // ✅ RESET PASSWORD
     public String resetPassword(String email, String newPassword) {
         Optional<User> userOpt = repo.findByEmail(email);
 

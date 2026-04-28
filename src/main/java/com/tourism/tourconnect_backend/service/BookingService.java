@@ -15,15 +15,18 @@ public class BookingService {
 
     // ✅ CREATE BOOKING
     public Booking create(Booking booking) {
-
-        // 🔥 DEBUG (IMPORTANT)
-        System.out.println("City: " + booking.getCity());
-        System.out.println("Homestay: " + booking.getHomestayName());
-        System.out.println("User: " + booking.getUserEmail());
-
-        booking.setStatus("PENDING"); // default
-
+        booking.setStatus("PENDING");
+        if (booking.getCreatedAt() == null) {
+            booking.setCreatedAt(java.time.Instant.now().toString());
+        }
+        if (booking.getBaseTripCost() == null) booking.setBaseTripCost(0.0);
+        if (booking.getHomestayPrice() == null) booking.setHomestayPrice(0.0);
+        if (booking.getGuidePrice() == null) booking.setGuidePrice(0.0);
         return repository.save(booking);
+    }
+
+    public List<Booking> getByUserEmail(String email) {
+        return repository.findByUserEmail(email);
     }
 
     // ✅ GET ALL BOOKINGS
